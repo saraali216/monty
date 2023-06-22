@@ -9,9 +9,9 @@
 void pop(stack_t **stack, unsigned int ln)
 {
 	if(stack == NULL || *stack == NULL)
-		print_empty_stack_error(ln);
+		pempty_stack(ln);
 	
-	delete_top_node(stack);
+	delete_top(stack);
 }
 
 /**
@@ -34,6 +34,6 @@ void nop(stack_t **stack, unsigned int ln)
 void pempty_stack(int ln)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", ln);
-	free_everything();
+	free_all();
 	exit(EXIT_FAILURE);
 }

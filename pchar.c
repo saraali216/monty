@@ -11,13 +11,13 @@ void pchar(stack_t **stack, unsigned int ln)
 	int number;
 
 	if (stack == NULL || *stack == NULL)
-		print_pchar_stack_empty_error(ln);
+		pchar_stack_empty(ln);
 
 	number = (*stack)->n;
 	if ((number >= 65 && number <= 90) || (number >= 97 && number <= 122))
 		printf("%c\n", number);
 	else
-		print_pchar_error(ln);
+		pchar(ln);
 }
 
 /**
@@ -53,7 +53,7 @@ void pstr(stack_t **stack, unsigned int ln)
 void pchar(int ln)
 {
 	fprintf(stderr, "L%d: can't pchar, value out of range\n", ln);
-	free_everything();
+	free_all();
 	exit(EXIT_FAILURE);
 }
 
@@ -65,6 +65,6 @@ void pchar(int ln)
 void pchar_stack_empty(int ln)
 {
 	fprintf(stderr, "L%d: can't pchar, stack empty\n", ln);
-	free_everything();
+	free_all();
 	exit(EXIT_FAILURE);
 }

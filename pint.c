@@ -9,7 +9,7 @@
 void pint(stack_t **stack, unsigned int ln)
 {
 	if (stack == NULL || *stack == NULL)
-		print_pint_error(ln);
+		ppint(ln);
 
 	printf("%d\n", (*stack)->n);
 }
@@ -21,7 +21,7 @@ void ppint(int ln)
 {
 
 	fprintf(stderr, "L%d: can't pint, stack empty\n", ln);
-	free_everything();
+	free_all();
 	exit(EXIT_FAILURE);
 }
 
@@ -56,6 +56,6 @@ void pswap(int ln)
 {
 
 	fprintf(stderr, "L%d: can't swap, stack too short\n", ln);
-	free_everything();
+	free_all();
 	exit(EXIT_FAILURE);
 }
