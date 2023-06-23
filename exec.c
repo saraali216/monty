@@ -5,6 +5,7 @@
  * @l: the line that will be checked
  * Return: 1 line is empty, 0 not empty
  */
+
 int is_emptyl(char *l)
 {
 	int leng = strlen(l);
@@ -37,7 +38,9 @@ int execf(char *fn)
 	FILE *file;
 	ssize_t read;
 	size_t lleng = 0;
+	data_t data;
 
+	data.stack = NULL;
 	file = fopen(fn, "r");
 	if (file == NULL)
 		open_file_error(fn);
@@ -65,6 +68,7 @@ void execl(char *l, int ln)
 {
 	int is_inst = -1;
 	int i;
+	data_t data;
 	instruction_t insts[] = {
 		{"push", push},
 		{"sub", sub},

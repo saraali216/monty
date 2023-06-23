@@ -1,16 +1,15 @@
 #include "monty.h"
 
 /**
- * pop .
+ * pop-poping
  * @stack: Pointer to the top of the stack
  * @ln: Line number of the current operation
  */
 
 void pop(stack_t **stack, unsigned int ln)
 {
-	if(stack == NULL || *stack == NULL)
+	if (stack == NULL || *stack == NULL)
 		pempty_stack(ln);
-	
 	delete_top(stack);
 }
 

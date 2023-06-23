@@ -9,7 +9,6 @@
 
 void psub(int ln)
 {
-
 	fprintf(stderr, "L%d: can't sub, stack too short\n", ln);
 	free_all();
 	exit(EXIT_FAILURE);
@@ -17,7 +16,6 @@ void psub(int ln)
 
 /**
  * is_num - Checks if a string represents a valid integer
- * 
  * @num: The string to check
  * Return: 1 if the string is a valid integer, 0 otherwise
  */
