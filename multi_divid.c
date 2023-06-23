@@ -21,6 +21,7 @@ void mul(stack_t **stack, unsigned int ln)
 
 }
 
+
 /**
  * print_mul_error - prints error if not mul.
  * @ln:current operation's number line
@@ -32,6 +33,7 @@ void pmul(int ln)
 	free_all();
 	exit(EXIT_FAILURE);
 }
+
 
 /**
  * the_div - divides the second top element
@@ -55,6 +57,7 @@ void the_div(stack_t **stack, unsigned int ln)
 		pdiv(ln);
 }
 
+
 /**
  * pdiv - prints div error .
  * @ln: current operation's number line
@@ -65,6 +68,7 @@ void pdiv(int ln)
 	free_all();
 	exit(EXIT_FAILURE);
 }
+
 
 /**
  * pdiv_zero-prints 0 if error.
