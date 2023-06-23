@@ -63,7 +63,7 @@ extern data_t data;
 
 
 /*error functions*/
-void Open_File_Error(char *fn);
+void open_file_error(char *fn);
 
 
 /*instructions*/
