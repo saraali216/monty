@@ -47,7 +47,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * TODO
+ * data structure
  */
 typedef struct data_s
 {
@@ -66,7 +66,7 @@ extern data_t data;
 void open_file_error(char *fn);
 
 
-/*instructions*/
+/*instructions struct...*/
 void pall(stack_t **stack, unsigned int ln);
 void add(stack_t **stack, unsigned int ln);
 void the_div(stack_t **stack, unsigned int ln);
@@ -86,15 +86,15 @@ void rotl(stack_t **stack, unsigned int ln);
 void rotr(stack_t **stack, unsigned int ln);
 
 
-/*linked list functions*/
+/*linked-list functions*/
 size_t print_stack(const stack_t *h);
-stack_t *add_node(stack_t **head, const int n);
-stack_t *add_stackint_end(stack_t **head, const int n);
-void free_stack(stack_t *head);
+stack_t *add_node(stack_t **hd, const int n);
+stack_t *add_stackint_end(stack_t **hd, const int n);
+void free_stack(stack_t *hd);
 void delete_top(stack_t **stack);
 
 
-/*helper*/
+/*deletes everything*/
 void free_all();
 
 
