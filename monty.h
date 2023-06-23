@@ -114,7 +114,7 @@ void pdiv_zero(int ln);
 void pmul(int ln);
 void pmod(int ln);
 
-void pc_har(int ln);
+void ppchar(int ln);
 void pchar_stack_empty(int ln);
 
 

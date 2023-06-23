@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * pall .
+ * pall: prints all the values on the stack,
+ * starting from the top of the stack.
  * @stack: Pointer to the top of the stack
  * @ln: Line number of the current operation
  */
@@ -13,24 +14,24 @@ void pall(stack_t **stack, unsigned int ln)
 }
 
 /**
- * push .
+ * push:pushes an element to the stack.
  * @stack: Pointer to the top of the stack
  * @ln: Line number of the current operation
  */
 
 void push(stack_t **stack, unsigned int ln)
 {
-	int number = 0;
+	int n = 0;
 
-	if (my_data.arg2)
+	if (data.arg2)
 	{
-		if (is_num(my_data.arg2))
+		if (is_num(data.arg2))
 		{
-			number = atoi(my_data.arg2);
-			if (my_data.mode == STACK)
-				add_node(stack, number);
+			n = atoi(data.arg2);
+			if (data.data_mode == STACK)
+				add_node(stack, n);
 			else
-				add_stackint_end(stack, number);
+				add_stackint_end(stack, n);
 		}
 		else
 			ppush_error(ln);
@@ -40,7 +41,7 @@ void push(stack_t **stack, unsigned int ln)
 		ppush_error(ln);
 }
 /**
- * ppush_error .
+ * ppush_error:prints errro of push .
  * @ln: Line number of the current operation
  */
 
@@ -53,12 +54,12 @@ void ppush_error(int ln)
 }
 
 /**
- * free_all - .
+ * free_all - deletes all.
  */
 
 void free_all(void)
 {
-	free_stack(my_data.stack);
-	fclose(my_data.file);
-	free(my_data.line);
+	free_stack(data.stack);
+	fclose(data.file);
+	free(data.l);
 }

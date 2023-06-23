@@ -1,23 +1,23 @@
 #include "monty.h"
 
 /**
- * pchar .
+ * pchar prints char.
  * @stack: Pointer to the top of the stack
  * @ln: Line number of the current operation
  */
 
 void pchar(stack_t **stack, unsigned int ln)
 {
-	int number;
+	int n;
 
 	if (stack == NULL || *stack == NULL)
 		pchar_stack_empty(ln);
 
-	number = (*stack)->n;
-	if ((number >= 65 && number <= 90) || (number >= 97 && number <= 122))
-		printf("%c\n", number);
+	n = (*stack)->n;
+	if ((n >= 65 && n <= 90) || (n >= 97 && n <= 122))
+		printf("%c\n", n);
 	else
-		pchar(ln);
+		ppchar(ln);
 }
 
 /**

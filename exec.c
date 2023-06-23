@@ -45,7 +45,7 @@ int execf(char *fn)
 	while ((read = getline(&l, &lleng, file)) != -1)
 	{
 		data.ln++;
-		_data.l = l;
+		data.l = l;
 		if (is_emptyl(data.l) == 1)
 			execl(data.l, data.ln);
 	}

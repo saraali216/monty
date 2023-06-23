@@ -8,8 +8,6 @@
  */
 int main(int argc, char **argv)
 {
-	data_t data = {0, NULL, NULL, NULL, NULL, NULL, STACK};
-
 	if (argc != 2)
 		pusage();
 	return (execf(argv[1]));

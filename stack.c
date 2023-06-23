@@ -10,7 +10,7 @@ void stack(stack_t **stack, unsigned int ln)
 {
 	UNUSED(stack);
 	UNUSED(ln);
-	data.mode = STACK;
+	data.data_mode = STACK;
 }
 
 
@@ -24,5 +24,5 @@ void queue(stack_t **stack, unsigned int ln)
 {
 	UNUSED(stack);
 	UNUSED(ln);
-	data.mode = QUEUE;
+	data.data_mode = QUEUE;
 }
