@@ -50,7 +50,7 @@ void pstr(stack_t **stack, unsigned int ln)
  * @ln: Line number of the current operation
  */
 
-void pchar(int ln)
+void ppchar(int ln)
 {
 	fprintf(stderr, "L%d: can't pchar, value out of range\n", ln);
 	free_all();

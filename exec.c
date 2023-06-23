@@ -68,7 +68,7 @@ void execl(char *l, int ln)
 	instruction_t insts[] = {
 		{"push", push},
 		{"sub", sub},
-		{"div", _div},
+		{"div", the_div},
 		{"add", add},
 		{"mul", mul},
 		{"mod", mod},
