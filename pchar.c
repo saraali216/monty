@@ -3,34 +3,34 @@
 /**
  * pchar prints char.
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pchar(stack_t **stack, unsigned int ln)
+void pchar(stack_t **stack, unsigned int line_number)
 {
 	int n;
 
 	if (stack == NULL || *stack == NULL)
-		pchar_stack_empty(ln);
+		pchar_stack_empty(line_number);
 
 	n = (*stack)->n;
 	if ((n >= 65 && n <= 90) || (n >= 97 && n <= 122))
 		printf("%c\n", n);
 	else
-		ppchar(ln);
+		ppchar(line_number);
 }
 
 /**
  * pstr .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pstr(stack_t **stack, unsigned int ln)
+void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *c;
 
-	UNUSED(ln);
+	UNUSED(line_number);
 	c = *stack;
 	while (c)
 	{
@@ -47,24 +47,24 @@ void pstr(stack_t **stack, unsigned int ln)
 
 /**
  * pchar.
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void ppchar(int ln)
+void ppchar(int line_number)
 {
-	fprintf(stderr, "L%d: can't pchar, value out of range\n", ln);
+	fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
 
 /**
  * pchar_stack_empty.
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pchar_stack_empty(int ln)
+void pchar_stack_empty(int line_number)
 {
-	fprintf(stderr, "L%d: can't pchar, stack empty\n", ln);
+	fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
