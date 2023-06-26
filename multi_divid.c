@@ -4,12 +4,12 @@
  * mul -multiplies the second top element
  * of the stack with the top element of the stack.
  * @stack: stack's pointer
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void mul(stack_t **stack, unsigned int ln)
+void mul(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		pmul(ln);
+		pmul(line_number);
 
 	if ((*stack)->next)
 	{
@@ -17,19 +17,19 @@ void mul(stack_t **stack, unsigned int ln)
 		delete_top(stack);
 	}
 	else
-		pmul(ln);
+		pmul(line_number);
 
 }
 
 
 /**
  * print_mul_error - prints error if not mul.
- * @ln:current operation's number line
+ * @line_number:current operation's number line
  */
-void pmul(int ln)
+void pmul(int line_number)
 {
 
-	fprintf(stderr, "L%d: can't be multiplied, stack too short\n", ln);
+	fprintf(stderr, "L%d: can't be multiplied, stack too short\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
@@ -39,32 +39,32 @@ void pmul(int ln)
  * the_div - divides the second top element
  * of the stack by the top element of the stack.
  * @stack: stack's pointer
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void the_div(stack_t **stack, unsigned int ln)
+void the_div(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		pdiv(ln);
+		pdiv(line_number);
 
 	if ((*stack)->next)
 	{
 		if ((*stack)->n == 0)
-			pdiv_zero(ln);
+			pdiv_zero(line_number);
 		(*stack)->next->n /= (*stack)->n;
 		delete_top(stack);
 	}
 	else
-		pdiv(ln);
+		pdiv(line_number);
 }
 
 
 /**
  * pdiv - prints div error .
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void pdiv(int ln)
+void pdiv(int line_number)
 {
-	fprintf(stderr, "L%d: can't be divided, stack too short\n", ln);
+	fprintf(stderr, "L%d: can't be divided, stack too short\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
@@ -72,12 +72,12 @@ void pdiv(int ln)
 
 /**
  * pdiv_zero-prints 0 if error.
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void pdiv_zero(int ln)
+void pdiv_zero(int line_number)
 {
 
-	fprintf(stderr, "L%d: division by zero\n", ln);
+	fprintf(stderr, "L%d: division by zero\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
