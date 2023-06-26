@@ -4,22 +4,22 @@
  * pall: prints all the values on the stack,
  * starting from the top of the stack.
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pall(stack_t **stack, unsigned int ln)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	UNUSED(ln);
+	UNUSED(line_number);
 	print_stack(*stack);
 }
 
 /**
  * push:pushes an element to the stack.
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void push(stack_t **stack, unsigned int ln)
+void push(stack_t **stack, unsigned int line_number)
 {
 	int n = 0;
 
@@ -34,21 +34,21 @@ void push(stack_t **stack, unsigned int ln)
 				add_stackint_end(stack, n);
 		}
 		else
-			ppush_error(ln);
+			ppush_error(line_number);
 
 	}
 	else
-		ppush_error(ln);
+		ppush_error(line_number);
 }
 /**
  * ppush_error:prints errro of push .
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void ppush_error(int ln)
+void ppush_error(int line_number)
 {
 
-	fprintf(stderr, "L%d: usage: push integer\n", ln);
+	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
