@@ -120,11 +120,12 @@ void pchar_stack_empty(int ln);
 
 /*execute functions*/
 int execf(char *fn);
-void execute_line(char *l, int ln); // Renamed 'execl' to 'execute_line'
+void execute_line(char *l, int ln);
+
 
 /*verifying*/
 int is_empty_line(char *l);
 int is_num(char *num);
 
 
-#endif /*MONTY_H*/
+#endif /* MONTY_H */
