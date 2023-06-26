@@ -22,6 +22,8 @@ void pall(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, unsigned int line_number)
 {
 	int n = 0;
+	data.arg2 = NULL;
+	data.data_mode = STACK;
 
 	if (data.arg2)
 	{
