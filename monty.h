@@ -43,7 +43,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
     char *opcode;
-    void (*f)(stack_t **stack, unsigned int ln);
+    void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
@@ -51,7 +51,7 @@ typedef struct instruction_s
  */
 typedef struct data_s
 {
-    int ln;
+    int line_number;
     char *l;
     char *arg1;
     char *arg2;
@@ -67,23 +67,23 @@ void open_file_error(char *fn);
 
 
 /*instructions struct...*/
-void pall(stack_t **stack, unsigned int ln);
-void add(stack_t **stack, unsigned int ln);
-void the_div(stack_t **stack, unsigned int ln);
-void mul(stack_t **stack, unsigned int ln);
-void mod(stack_t **stack, unsigned int ln);
-void pop(stack_t **stack, unsigned int ln);
-void push(stack_t **stack, unsigned int ln);
-void pint(stack_t **stack, unsigned int ln);
-void swap(stack_t **stack, unsigned int ln);
-void nop(stack_t **stack, unsigned int ln);
-void sub(stack_t **stack, unsigned int ln);
-void pchar(stack_t **stack, unsigned int ln);
-void pstr(stack_t **stack, unsigned int ln);
-void queue(stack_t **stack, unsigned int ln);
-void stack(stack_t **stack, unsigned int ln);
-void rotl(stack_t **stack, unsigned int ln);
-void rotr(stack_t **stack, unsigned int ln);
+void pall(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void the_div(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 
 /*linked-list functions*/
@@ -98,29 +98,29 @@ void delete_top(stack_t **stack);
 void free_all();
 
 
-void pusage();
-void pinvalid_instruction(int ln, char *opcode_instruction);
+void pusage(void);
+void pinvalid_instruction(int line_number, char *opcode_instruction);
 void pmalloc_error();
-void ppush_error(int ln);
-void pempty_stack(int ln);
-void ppint(int ln);
-void pswap(int ln);
-void padd(int ln);
-void psub(int ln);
+void ppush_error(int line_number);
+void pempty_stack(int line_number);
+void ppint(int line_number);
+void pswap(int line_number);
+void padd(int line_number);
+void psub(int line_number);
 
-void pdiv(int ln);
-void pdiv_zero(int ln);
+void pdiv(int line_number);
+void pdiv_zero(int line_number);
 
-void pmul(int ln);
-void pmod(int ln);
+void pmul(int line_number);
+void pmod(int line_number);
 
-void ppchar(int ln);
-void pchar_stack_empty(int ln);
+void ppchar(int line_number);
+void pchar_stack_empty(int line_number);
 
 
 /*execute functions*/
 int execf(char *fn);
-void execl(char *l, int ln);
+void execl(char *l, int line_number);
 
 
 /*verifying*/
