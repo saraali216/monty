@@ -3,15 +3,15 @@
 /**
  * rotl  .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void rotl(stack_t **stack, unsigned int ln)
+void rotl(stack_t **stack, unsigned int line_number)
 {
 	int tp = 0;
 	stack_t *c = NULL;
 
-	UNUSED(ln);
+	UNUSED(line_number);
 	if (stack != NULL && *stack != NULL && (*stack)->next != NULL)
 	{
 		tp = (*stack)->n;
@@ -28,15 +28,15 @@ void rotl(stack_t **stack, unsigned int ln)
 /**
  * rotr .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void rotr(stack_t **stack, unsigned int ln)
+void rotr(stack_t **stack, unsigned int line_number)
 {
 	int las = 0;
 	stack_t *c = NULL;
 
-	UNUSED(ln);
+	UNUSED(line_number);
 
 	if (stack != NULL && *stack != NULL && (*stack)->next != NULL)
 	{
