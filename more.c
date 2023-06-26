@@ -3,13 +3,13 @@
 /**
  * psub - Prints an error message and terminates the program
  * if the stack is too short for the "sub" operation.
- * @ln: Line number of the current operation.
+ * @line_number: Line number of the current operation.
  * Return: Nothing
  */
 
-void psub(int ln)
+void psub(int line_number)
 {
-	fprintf(stderr, "L%d: can't sub, stack too short\n", ln);
+	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
