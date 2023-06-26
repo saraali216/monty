@@ -27,9 +27,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -42,8 +42,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int ln);
+    char *opcode;
+    void (*f)(stack_t **stack, unsigned int ln);
 } instruction_t;
 
 /**
@@ -51,13 +51,13 @@ typedef struct instruction_s
  */
 typedef struct data_s
 {
-	int ln;
-	char *l;
-	char *arg1;
-	char *arg2;
-	stack_t *stack;
-	FILE *file;
-	int data_mode;
+    int ln;
+    char *l;
+    char *arg1;
+    char *arg2;
+    stack_t *stack;
+    FILE *file;
+    int data_mode;
 } data_t;
 extern data_t data;
 
@@ -120,10 +120,10 @@ void pchar_stack_empty(int ln);
 
 /*execute functions*/
 int execf(char *fn);
-void execl(char *l, int ln);
+void execute_line(char *l, int ln); // Renamed 'execl' to 'execute_line'
 
 /*verifying*/
-int is_emptyl(char *l);
+int is_empty_line(char *l);
 int is_num(char *num);
 
 
