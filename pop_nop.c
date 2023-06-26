@@ -3,36 +3,36 @@
 /**
  * pop-poping
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pop(stack_t **stack, unsigned int ln)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		pempty_stack(ln);
+		pempty_stack(line_number);
 	delete_top(stack);
 }
 
 /**
  * nop .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void nop(stack_t **stack, unsigned int ln)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	UNUSED(stack);
-	UNUSED(ln);
+	UNUSED(line_number);
 }
 
 /**
  * pempty_stack .
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pempty_stack(int ln)
+void pempty_stack(int line_number)
 {
-	fprintf(stderr, "L%d: can't pop an empty stack\n", ln);
+	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
