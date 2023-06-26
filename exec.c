@@ -47,10 +47,10 @@ int execf(char *fn)
 	data.file = file;
 	while ((read = getline(&l, &lleng, file)) != -1)
 	{
-		data.ln++;
+		data.line_number++;
 		data.l = l;
 		if (is_emptyl(data.l) == 1)
-			execl(data.l, data.ln);
+			execl(data.l, data.line_number);
 	}
 	free_stack(data.stack);
 	fclose(file);
@@ -62,9 +62,9 @@ int execf(char *fn)
 /**
  * execl- executes a single operation's line
  * @l: operation's line
- * @ln: current operation's line number
+ * @line_number: current operation's line number
  */
-void execl(char *l, int ln)
+void execl(char *l, int line_number)
 {
 	int is_inst = -1;
 	int i;
@@ -92,7 +92,7 @@ void execl(char *l, int ln)
 	data.arg2 = strtok(NULL, " \n");
 	if (data.arg1[0] == '#')
 	{
-		nop(&data.stack, ln);
+		nop(&data.stack, line_number);
 		return;
 	}
 	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
@@ -103,7 +103,7 @@ void execl(char *l, int ln)
 			break;
 		}
 	if (is_inst != -1)
-		insts[i].f(&data.stack, ln);
+		insts[i].f(&data.stack, line_number);
 	else
-		pinvalid_instruction(ln, data.arg1);
+		pinvalid_instruction(line_number, data.arg1);
 }
