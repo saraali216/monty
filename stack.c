@@ -3,13 +3,13 @@
 /**
  * stack .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void stack(stack_t **stack, unsigned int ln)
+void stack(stack_t **stack, unsigned int line_number)
 {
 	UNUSED(stack);
-	UNUSED(ln);
+	UNUSED(line_number);
 	data.data_mode = STACK;
 }
 
@@ -17,12 +17,12 @@ void stack(stack_t **stack, unsigned int ln)
 /**
  * queue .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void queue(stack_t **stack, unsigned int ln)
+void queue(stack_t **stack, unsigned int line_number)
 {
 	UNUSED(stack);
-	UNUSED(ln);
+	UNUSED(line_number);
 	data.data_mode = QUEUE;
 }
