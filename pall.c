@@ -22,8 +22,6 @@ void pall(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, unsigned int line_number)
 {
 	int n = 0;
-	data.arg2 = NULL;
-	data.data_mode = STACK;
 
 	if (data.arg2)
 	{
@@ -31,8 +29,6 @@ void push(stack_t **stack, unsigned int line_number)
 		{
 			n = atoi(data.arg2);
 			if (data.data_mode == STACK)
-				add_node(stack, n);
-			else
 				add_stackint_end(stack, n);
 		}
 		else
