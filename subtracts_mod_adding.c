@@ -3,13 +3,13 @@
 /**
  * add - adding to the stack .
  * @stack: Pointer to stack
- * @ln: current operation's line number
+ * @line_number: current operation's line number
  */
 
-void add(stack_t **stack, unsigned int ln)
+void add(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		padd(ln);
+		padd(line_number);
 
 	if ((*stack)->next)
 	{
@@ -17,18 +17,18 @@ void add(stack_t **stack, unsigned int ln)
 		delete_top(stack);
 	}
 	else
-		padd(ln);
+		padd(line_number);
 }
 
 /**
  * padd- prints the error
- * @ln: current operation's line number
+ * @line_number: current operation's line number
  */
 
-void padd(int ln)
+void padd(int line_number)
 {
 
-	fprintf(stderr, "L%d: can't add, stack too short\n", ln);
+	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
@@ -36,12 +36,12 @@ void padd(int ln)
 /**
  * sub - Subtracks
  * @stack: stack's pointer
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void sub(stack_t **stack, unsigned int ln)
+void sub(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		psub(ln);
+		psub(line_number);
 
 	if ((*stack)->next)
 	{
@@ -49,7 +49,7 @@ void sub(stack_t **stack, unsigned int ln)
 		delete_top(stack);
 	}
 	else
-		psub(ln);
+		psub(line_number);
 }
 
 
@@ -57,20 +57,20 @@ void sub(stack_t **stack, unsigned int ln)
  * mod - computes the rest of the division of the second top element
  * of the stack by the top element of the stack.
  * @stack: stack's pointer
- * @ln: current operation's number line
+ * @line_number: current operation's number line
  */
-void mod(stack_t **stack, unsigned int ln)
+void mod(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		pmod(ln);
+		pmod(line_number);
 
 	if ((*stack)->next)
 	{
 		if ((*stack)->n == 0)
-			pdiv_zero(ln);
+			pdiv_zero(line_number);
 		(*stack)->next->n %= (*stack)->n;
 		delete_top(stack);
 	}
 	else
-		pmod(ln);
+		pmod(line_number);
 }
