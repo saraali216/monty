@@ -3,24 +3,24 @@
 /**
  * pint .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pint(stack_t **stack, unsigned int ln)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		ppint(ln);
+		ppint(line_number);
 
 	printf("%d\n", (*stack)->n);
 }
 /**
  * ppint .
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
-void ppint(int ln)
+void ppint(int line_number)
 {
 
-	fprintf(stderr, "L%d: can't pint, stack empty\n", ln);
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
@@ -28,15 +28,15 @@ void ppint(int ln)
 /**
  * swap .
  * @stack: Pointer to the top of the stack
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void swap(stack_t **stack, unsigned int ln)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
 	if (stack == NULL || *stack == NULL)
-		pswap(ln);
+		pswap(line_number);
 
 	if ((*stack)->next)
 	{
@@ -45,17 +45,17 @@ void swap(stack_t **stack, unsigned int ln)
 		(*stack)->next->n = temp;
 	}
 	else
-		pswap(ln);
+		pswap(line_number);
 }
 /**
  * pswap .
- * @ln: Line number of the current operation
+ * @line_number: Line number of the current operation
  */
 
-void pswap(int ln)
+void pswap(int line_number)
 {
 
-	fprintf(stderr, "L%d: can't swap, stack too short\n", ln);
+	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	free_all();
 	exit(EXIT_FAILURE);
 }
